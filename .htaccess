@@ -1,0 +1,9 @@
+# Use this ONLY when your shared host document root is the PROJECT ROOT (not "public").
+# It sends all requests to the public folder so Laravel can run.
+#
+# If you can set document root to the "public" folder, do that and remove this file.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

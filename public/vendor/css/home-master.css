@@ -1,0 +1,252 @@
+:root{
+    --primary-color: #134074;
+    --secondary-color: #13315c;
+    --success-color: #4fb94c;
+    --danger-color: #F95738;
+    --warning-color: #EE964B;
+    --info-color: #f4d35e;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+@font-face {
+    font-family: 'KhmerOSMoul';
+    src: url('/vendor/fonts/KhmerOSMoul.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'KhmerOSSiemreap';
+    src: url('/vendor/fonts/KhmerOSSiemreap.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'KhmerOSBokor';
+    src: url('/vendor/fonts/KhmerOSBokor.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'KhmerKampot';
+    src: url('/vendor/fonts/KhmerKampot.ttf') format('truetype');
+}
+
+.kh-header {
+    font-family: 'KhmerOSMoul', serif;
+    font-weight: normal;
+}
+.kh-title {
+    font-family: 'KhmerOSBokor', serif;
+    font-weight: normal;
+}
+.kh-content {
+    font-family: 'KhmerKampot', serif;
+    font-weight: normal;
+}
+.home-bg-primary{
+    background-color: var(--primary-color);
+}
+.home-bg-secondary{
+    background-color: var(--secondary-color);
+}
+.home-bg-success{
+    background-color: var(--success-color);
+}
+.home-bg-warning{
+    background-color: var(--warning-color);
+}
+.home-bg-danger{
+    background-color: var(--danger-color);
+}
+.home-bg-info{
+    background-color: var(--info-color);
+}
+.home-bg-light{
+    background-color: var(--light-color);
+}
+.home-bg-dark{
+    background-color: var(--dark-color);
+}
+.home-color-primary{
+    color: var(--primary-color);
+}
+.home-color-secondary{
+    color: var(--secondary-color);
+}
+.home-color-success{
+    color: var(--success-color);
+}
+.home-color-warning{
+    color: var(--warning-color);
+}
+.home-color-danger{
+    color: var(--danger-color);
+}
+.home-color-info{
+    color: var(--info-color);
+}
+
+/**
+* Home Header
+*/
+header{
+    margin: 0;
+    padding: 0;
+    min-height: 150px;
+    background-color: var(--secondary-color);
+}
+.top-header{
+    margin: 0;
+    padding-top: 2px;
+    background-color: var(--info-color);
+    height: 30px;
+    line-height: 1.5;
+}
+.top-item-nav{
+    display: inline-block;
+    text-decoration: none;
+    color: var(--light-color) !important;
+    font-size: 0.9rem;
+}
+.top-item-nav:hover{
+    color: var(--primary-color) !important;
+}
+
+.top-item-nav:not(:last-child){
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    padding-right: 0.75rem;
+    margin-right: 0.75rem;
+}
+
+.header-bg{
+    background-color: var(--secondary-color);
+}
+
+.navbar-bg{
+    background-color: var(--secondary-color);
+}
+.kh-nav-item, a, .dropdown-item{
+    color: white !important;
+    text-decoration: none !important;
+    font-family: 'KhmerOSBokor', serif;
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+.kh-nav-item:hover a{
+    color: var(--warning-color) !important;
+}
+/**
+* Home Main
+*/
+main{
+    padding: 0;
+    margin: 0;
+    min-height: 500px;
+}
+
+@keyframes carouselCaptionFlyIn{
+    from{
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slower fade from 2nd slide onward (slide indices 1–4) */
+#carouselExampleDark.carousel-fade .carousel-inner .carousel-item:nth-child(2),
+#carouselExampleDark.carousel-fade .carousel-inner .carousel-item:nth-child(3),
+#carouselExampleDark.carousel-fade .carousel-inner .carousel-item:nth-child(4),
+#carouselExampleDark.carousel-fade .carousel-inner .carousel-item:nth-child(5){
+    transition: opacity 1.2s ease-in-out !important;
+}
+
+#carouselExampleDark .carousel-item .carousel-bg-title,
+#carouselExampleDark .carousel-item .carousel-bg-text{
+    opacity: 0;
+}
+
+#carouselExampleDark .carousel-item.active .carousel-bg-title{
+    animation: carouselCaptionFlyIn 0.5s ease-out 0.15s forwards;
+}
+
+#carouselExampleDark .carousel-item.active .carousel-bg-text{
+    animation: carouselCaptionFlyIn 0.5s ease-out 0.35s forwards;
+}
+
+/* Hide caption on mobile, show from md up */
+#carouselExampleDark .carousel-caption{
+    display: none !important;
+}
+@media (min-width: 768px){
+    #carouselExampleDark .carousel-caption{
+        display: flex !important;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center;
+        text-align: center;
+        left: 0;
+        right: 0;
+    }
+}
+
+#carouselExampleDark .carousel-bg-title{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    text-align: center;
+}
+
+#carouselExampleDark .carousel-bg-text{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    text-align: center;
+}
+/**
+* Home Footer
+*/
+footer{
+    margin: 0;
+    padding: 0;
+    min-height: 150px;
+    background-color: var(--secondary-color);
+}
+.footer-item{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.footer-item a{
+    color: white !important;
+    text-decoration: none !important;
+    font-family: 'KhmerKampot', serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-weight: normal;
+}
+.footer-item a:hover{
+    color: var(--warning-color) !important;
+}
+.footer-social-icon, a{
+    font-size: 2rem;
+    line-height: 1.5;
+    font-weight: normal;
+}
+.footer-social-icon:hover, a:hover{
+    color: var(--warning-color) !important;
+}
