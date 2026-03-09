@@ -7,8 +7,13 @@ Route::get('/', function () {
     return view('home.home');
 });
 
+// Login — all login URLs use this route and show resources/views/Dashboard/login.blade.php
+Route::get('/login', function () {
+    return view('dashboard.login');
+})->name('login')->middleware('guest');
+
 Route::get('/Admin-Panel', function () {
-    return view('Dashboard.Admin-Panel');
+    return view('dashboard.Admin-Panel');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::redirect('/dashboard', '/Admin-Panel');
