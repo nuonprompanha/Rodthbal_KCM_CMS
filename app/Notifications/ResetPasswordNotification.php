@@ -9,7 +9,7 @@ class ResetPasswordNotification extends ResetPassword
 {
     /**
      * Build the mail representation of the notification.
-     * Uses RODTHBAL KCM CMS name and OCT logo (via mail header template).
+     * Uses app name as text in mail header (no images).
      */
     public function toMail($notifiable)
     {

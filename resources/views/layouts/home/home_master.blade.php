@@ -36,12 +36,25 @@
                     </div>
                     <div class="col-lg-6 p-0 m-0 text-center d-none d-lg-block">
                         <div
-                            class="d-flex d-md-block align-items-center justify-content-center justify-content-md-end gap-3">
+                            class="kh-title d-flex d-md-block align-items-center justify-content-center justify-content-md-end gap-3">
                             <a href="#" class="top-item-nav text-decoration-none">ទំព័រដើម</a>
                             <a href="#" class="top-item-nav text-decoration-none">ទំនាក់ទំនង</a>
                             @auth
-                                <a href="{{ route('dashboard') }}" target="_blank"
-                                    class="top-item-nav text-decoration-none">ផ្ទាំងគ្រប់គ្រង</a>
+                                @if (auth()->user()->user_type === 'public')
+                                    <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                                        @csrf
+                                        <button type="submit"
+                                            class="btn btn-link p-0 top-item-nav text-decoration-none border-0 bg-transparent">ចាកចេញ</button>
+                                    </form>
+                                @else
+                                    <a href="{{ route('dashboard') }}" target="_blank"
+                                        class="top-item-nav text-decoration-none">ផ្ទាំងគ្រប់គ្រង</a>
+                                    <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                                        @csrf
+                                        <button type="submit"
+                                            class="btn btn-link p-0 top-item-nav text-decoration-none border-0 bg-transparent">ចាកចេញ</button>
+                                    </form>
+                                @endif
                             @else
                                 <a href="{{ route('login') }}" target="_blank"
                                     class="top-item-nav text-decoration-none">ចូលប្រើប្រាស់</a>
