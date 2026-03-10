@@ -40,6 +40,8 @@
         }
     },
     "scripts": {
+        "deploy": "php deploy.php",
+        "deploy:zip": "php deploy.php --skip-build",
         "setup": [
             "composer install",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",

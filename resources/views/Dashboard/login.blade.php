@@ -107,7 +107,7 @@
           </form>
           <div class="social-auth-links text-center mb-3 d-grid gap-2">
             <p>- OR -</p>
-            <a href="#" class="btn btn-danger">
+            <a href="{{ route('auth.google.redirect') }}" class="btn btn-danger text-white">
               <i class="bi bi-google me-2"></i> Sign in with Google
             </a>
           </div>

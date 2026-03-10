@@ -240,9 +240,8 @@
                                 <img src="{{ auth()->user()?->avatar_url ?? 'https://ui-avatars.com/api/?name=User&size=160&background=0D8ABC&color=fff' }}"
                                     class="rounded-circle shadow" alt="User Image" />
                                 <p>
-                                    {{ auth()->user()?->name ?? 'User' }}
-                                    <small>{{ auth()->user()?->departments->pluck('dept_name')->join(', ') ?? '' }}</small>
                                     {{ auth()->user()?->email ?? '' }}
+                                    <small>{{ auth()->user()?->departments->pluck('dept_name')->join(', ') ?? '' }}</small>
                                 </p>
                             </li>
                             <!--end::User Image-->
@@ -250,9 +249,14 @@
                             <li class="user-body">
                                 <!--begin::Row-->
                                 <div class="row">
-                                    <div class="col-4 text-center"><a href="#">Followers</a></div>
-                                    <div class="col-4 text-center"><a href="#">Sales</a></div>
-                                    <div class="col-4 text-center"><a href="#">Friends</a></div>
+                                    <div class="col-8 text-start">E-Mail Verified</div>
+                                    <div class="col-4 text-center">
+                                        @if (auth()->user()?->email_verified_at)
+                                            <span class="text-success"><i class="fa-solid fa-certificate"></i></span>
+                                        @else
+                                            <span class="text-danger"><i class="fa-solid fa-lock-open"></i></span>
+                                        @endif
+                                    </div>
                                 </div>
                                 <!--end::Row-->
                             </li>

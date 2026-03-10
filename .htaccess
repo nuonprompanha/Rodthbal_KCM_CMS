@@ -1,9 +1,25 @@
-# Use this ONLY when your shared host document root is the PROJECT ROOT (not "public").
-# It sends all requests to the public folder so Laravel can run.
+# Laravel – .htaccess for shared hosting
+# Use when document root is the PROJECT ROOT (not "public").
+# Redirects all requests to the public folder so Laravel runs correctly.
 #
-# If you can set document root to the "public" folder, do that and remove this file.
+# If you can set document root to "public", do that and delete this file.
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # Redirect all requests to the public folder
+    RewriteCond %{REQUEST_URI} !^/public/
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
+
+# Deny access to sensitive files (optional; some hosts block these already)
+<FilesMatch "^\.">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+<Files ".env">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</Files>

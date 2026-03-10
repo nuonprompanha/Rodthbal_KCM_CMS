@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/css/home-master.css') }}">
 </head>
 
-<body>
+<body class="kh-content">
     <!-- Header -->
     <header>
         <div class="container-fluid top-header">
@@ -37,7 +37,7 @@
                     <div class="col-lg-6 p-0 m-0 text-center d-none d-lg-block">
                         <div
                             class="kh-title d-flex d-md-block align-items-center justify-content-center justify-content-md-end gap-3">
-                            <a href="#" class="top-item-nav text-decoration-none">ទំព័រដើម</a>
+                            <a href="/" class="top-item-nav text-decoration-none">ទំព័រដើម</a>
                             <a href="#" class="top-item-nav text-decoration-none">ទំនាក់ទំនង</a>
                             @auth
                                 @if (auth()->user()->user_type === 'public')
@@ -82,7 +82,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item kh-nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">ទំព័រដើម</a>
+                                    <a class="nav-link active" aria-current="page" href="/">ទំព័រដើម</a>
                                 </li>
                                 <li class="nav-item kh-nav-item">
                                     <a class="nav-link" href="#">ព្រះបន្ទូល</a>
